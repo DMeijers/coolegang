@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+	/* Direct to the home page */
+	Route::get('/', ['as' => 'homepage', 'uses' => 'HomepageController@showHomePage']);
+	
