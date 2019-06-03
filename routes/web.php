@@ -11,11 +11,7 @@
 |
 */
 
-<<<<<<< HEAD
-	/* Direct to the home page */
-	Route::get('/', ['as' => 'homepage', 'uses' => 'HomepageController@showHomePage']);
 	
-=======
 Route::get('/', function () {
     return view('welcome');
 });
@@ -23,4 +19,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
->>>>>>> master
+
+Route::get('/welcomepage', ['as' => 'welcomepage', 'uses' => 'WelcomePageController@showWelcomepage']);
+
+Route::get('/', ['as' => 'homepage', 'uses' => 'HomepageController@showHomepage']);

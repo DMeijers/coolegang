@@ -1,4 +1,5 @@
-
+@include('essentials.head')
+@include('essentials.nav')
 	<head>
 		<title>Page Title</title>
 	</head>
