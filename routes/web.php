@@ -11,6 +11,16 @@
 |
 */
 
+<<<<<<< HEAD
 	/* Direct to the home page */
 	Route::get('/', ['as' => 'homepage', 'uses' => 'HomepageController@showHomePage']);
 	
+=======
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+>>>>>>> master
