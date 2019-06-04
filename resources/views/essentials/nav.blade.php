@@ -25,7 +25,7 @@
 
         <ul class="uk-navbar-nav">
             <li>
-                <a href="#">Parent</a>
+                <a href="#">Profile</a>
                 <div class="uk-navbar-dropdown">
                     <ul class="uk-nav uk-navbar-dropdown-nav">
                         <li class="uk-active"><a href="#">Active</a></li>
