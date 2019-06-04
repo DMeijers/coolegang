@@ -10,7 +10,7 @@
 		</div>
 
 		<!-- Container -->
-		<div class="uk-container uk-background-default uk-width-1-3 uk-height-1 uk-position-center">
+		<div class="uk-container uk-background-default uk-width-2-3 uk-height-1 uk-position-center">
 			<!-- Post -->
 			<div class="uk-width-5-6"> 
 				<!-- User -->
