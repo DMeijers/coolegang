@@ -2,7 +2,7 @@
     <div class="uk-navbar-left">
 
         <ul class="uk-navbar-nav">
-            <a href="" class="uk-navbar-item uk-logo">Ananas</a>
+            <a href="{{url('/')}}" class="uk-navbar-item uk-logo">Ananas</a>
         </ul>
 
     </div>
@@ -18,11 +18,13 @@
                         <li class="uk-nav-header">Friends</li>
                         <li><a href="#">Chat</a></li>
                         <li class="uk-nav-divider"></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Logout</a></li>
+                        <li><a href="{{url('/login')}}">Login</a></li>
+                        <li><a href="">Logout</a></li>
                     </ul>
                 </div>
             </li>
+            <li><a href="{{url('/login')}}">Login</a></li>
+            <li><a href="{{url('/register')}}">Register</a></li>
         </ul>
     </div>
 </nav>
