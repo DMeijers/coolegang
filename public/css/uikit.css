@@ -187,7 +187,7 @@ svg:not(:root) {
 }
 /*
  * Hide `alt` text for lazy load images
- * Selector for background while loading img[data-src*='.jpg'][src*='data:image'] { background: grey; }
+ * Selector for background while loading images[data-src*='.jpg'][src*='data:image'] { background: grey; }
  */
 img:not([src]) {
   visibility: hidden;
@@ -7817,7 +7817,7 @@ iframe.uk-cover {
  ========================================================================== */
 /*
  * Preserve original dimensions
- * Because `img, `video`, `canvas` and  `audio` are already responsive by default, see Base component
+ * Because `images, `video`, `canvas` and  `audio` are already responsive by default, see Base component
  */
 .uk-preserve-width,
 .uk-preserve-width canvas,
@@ -7835,7 +7835,7 @@ iframe.uk-cover {
   box-sizing: border-box;
 }
 /*
- * 1. Set a maximum width. `important` needed to override `uk-preserve-width img`
+ * 1. Set a maximum width. `important` needed to override `uk-preserve-width images`
  * 2. Auto scale the height. Only needed if `height` attribute is present
  */
 .uk-responsive-width {
@@ -7847,7 +7847,7 @@ iframe.uk-cover {
 /*
  * 1. Set a maximum height. Only works if the parent element has a fixed height
  * 2. Auto scale the width. Only needed if `width` attribute is present
- * 3. Reset max-width, which `img, `video`, `canvas` and  `audio` already have by default
+ * 3. Reset max-width, which `images, `video`, `canvas` and  `audio` already have by default
  */
 .uk-responsive-height {
   /* 1 */
