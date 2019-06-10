@@ -6,13 +6,9 @@
 	<body style="height: 100%;">
 	<div class="uk-background-muted uk-background-cover" style="height: 100%;">
 
-		<div>
-
-		</div>
-
-		<!-- Container -->
-		<div class="uk-container uk-background-default uk-width-2-3 uk-height-1 uk-position-center">
-			@yield('content')
+		@yield('header')
+		<div class="uk-container uk-container-large">
+		@yield('content')
 		</div>
 	</div>
 	</body>
