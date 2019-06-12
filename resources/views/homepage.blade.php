@@ -4,7 +4,7 @@
 		<title>Ananas</title>
 	</head>
 	<body style="height: 100%;">
-	<div class="uk-background-muted uk-background-cover" style="height: 100%;">
+	<div class="uk-background-muted uk-background-cover" style="height: 100%; background-image: url({{URL::asset('images/ananas.jpg')}})">
 
 		@yield('header')
 		<div class="uk-container uk-container-large">

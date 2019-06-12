@@ -1,4 +1,4 @@
-<nav class="uk-navbar-container " uk-navbar>
+<nav class="uk-navbar-container uk-navbar-transparent" style="background-color: deepskyblue" uk-navbar>
     <div class="uk-navbar-left">
 
         <ul class="uk-navbar-nav">
