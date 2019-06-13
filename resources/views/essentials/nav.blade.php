@@ -34,22 +34,25 @@
     <div class="uk-navbar-right">
 
         <ul class="uk-navbar-nav">
-            <li><a href="{{url('/login')}}">Login</a></li>
-            <li><a href="{{url('/register')}}">Register</a></li>
-            <li>
-                <a href="#">Profile</a>
-                <div class="uk-navbar-dropdown">
-                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                        <li class="uk-nav-header">Here comes a name</li>
-                        <li class="uk-active"><a href="#">Account settings</a></li>
-                        <li class="uk-nav-divider"></li>
-                        <li class="uk-nav-header">Friends</li>
-                        <li><a href="#">Chat</a></li>
-                        <li class="uk-nav-divider"></li>
-                        <li><a href="">Logout</a></li>
-                    </ul>
-                </div>
-            </li>
+            @if(!Auth::user())
+                <li><a href="{{url('/login')}}">Login</a></li>
+                <li><a href="{{url('/register')}}">Register</a></li>
+            @else
+                <li>
+                    <a href="#">Profile</a>
+                    <div class="uk-navbar-dropdown">
+                        <ul class="uk-nav uk-navbar-dropdown-nav">
+                            <li class="uk-nav-header">{{Auth::user()->name}}</li>
+                            <li class="uk-active"><a href="#">Account settings</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li class="uk-nav-header">Friends</li>
+                            <li><a href="#">Chat</a></li>
+                            <li class="uk-nav-divider"></li>
+                            <li><a href="{{url('/logout')}}">Logout</a></li>
+                        </ul>
+                    </div>
+                </li>
+            @endif
         </ul>
     </div>
 </nav>
