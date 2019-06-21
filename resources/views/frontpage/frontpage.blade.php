@@ -1,14 +1,14 @@
 @extends('homepage')
 
 @section('header')
-    <br>
-    <br>
-    <div style="background-color: deepskyblue">
-        <hr class="uk-divider-icon">
-        <h1 class="uk-heading-medium uk-text-center">Welcome to Ananas</h1>
-        <hr class="uk-divider-icon">
-    </div>
-    <br>
+        <br>
+        <br>
+        <div style="background-color: deepskyblue">
+            <hr class="uk-divider-icon">
+            <h1 class="uk-heading-medium uk-text-center">Welcome to Ananas</h1>
+            <hr class="uk-divider-icon">
+        </div>
+        <br>
 @endsection
 
 @section('content')
