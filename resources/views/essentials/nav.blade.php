@@ -1,57 +1,42 @@
-<nav class="uk-navbar-container" uk-navbar>
+<nav uk-navbar>
     <div class="uk-navbar-left">
+
+        @if(Auth::user())
+            <a href="#offcanvas-usage" uk-toggle="target: #offcanvas-nav-primary"><span class="pl-4"
+                                                                                        uk-icon="menu"></span></a>
+
+            <div id="offcanvas-nav-primary" uk-offcanvas="overlay: true">
+                <div class="uk-offcanvas-bar uk-flex uk-flex-column">
+                    <ul class="uk-nav uk-nav-primary uk-nav-center uk-margin-auto-vertical">
+                        <li class="uk-nav-header">Friends</li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: comment"></span>Chat</a></li>
+                        <li class="uk-nav-divider"></li>
+                        <li class="uk-nav-header">Followers</li>
+                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: heart"></span>Following</a>
+                        </li>
+                        <li class="uk-nav-divider"></li>
+                        <li class="uk-active"><a href="{{url('/profile')}}">Profile</a></li>
+                        <li class="uk-active"><a href="{{url('/logout')}}">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        @endif
+    </div>
+    <div class="uk-navbar-center">
         <ul class="uk-navbar-nav">
-            <li><a href="{{ route('homepage') }}">Home</a></li>
-            <li><a href="{{ route('welcomepage') }}">Welcome</a></li>
+            <a href="{{url('/')}}" class="uk-navbar-item uk-logo">Ananas</a>
         </ul>
     </div>
     <div class="uk-navbar-right">
-        <ul class="uk-navbar-nav">
-            <li><a href="{{ route('login') }}">Login</a></li>
-            <li><a href="{{ route('register') }}">Register</a></li>
-        </ul>
+        @if(!Auth::user())
+            <ul class="uk-navbar-nav">
+                <li><a href="{{url('/login')}}">Login</a></li>
+                <li><a href="{{url('/register')}}">Register</a></li>
+            </ul>
+        @else
+            <ul class="uk-navbar-nav">
+                <li class="uk-active"><a href="{{url('/profile')}}">{{Auth::user()->name}}</a></li>
+            </ul>
+        @endif
     </div>
 </nav>
-{{--<nav class="uk-navbar-container" uk-navbar>--}}
-{{--    <div class="uk-navbar-left">--}}
-
-{{--        <ul class="uk-navbar-nav">--}}
-{{--            <li class="uk-active"><a href="#">Active</a></li>--}}
-{{--            <li>--}}
-{{--                <a href="#">Parent</a>--}}
-{{--                <div class="uk-navbar-dropdown">--}}
-{{--                    <ul class="uk-nav uk-navbar-dropdown-nav">--}}
-{{--                        <li class="uk-active"><a href="#">Active</a></li>--}}
-{{--                        <li><a href="#">Item</a></li>--}}
-{{--                        <li class="uk-nav-header">Header</li>--}}
-{{--                        <li><a href="#">Item</a></li>--}}
-{{--                        <li><a href="#">Item</a></li>--}}
-{{--                        <li class="uk-nav-divider"></li>--}}
-{{--                        <li><a href="#">Item</a></li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            </li>--}}
-{{--            <li><a href="#">Item</a></li>--}}
-{{--        </ul>--}}
-
-{{--    </div>--}}
-{{--    <div class="uk-navbar-right">--}}
-
-{{--        <ul class="uk-navbar-nav">--}}
-{{--            <li>--}}
-{{--                <a href="#">Profile</a>--}}
-{{--                <div class="uk-navbar-dropdown">--}}
-{{--                    <ul class="uk-nav uk-navbar-dropdown-nav">--}}
-{{--                        <li class="uk-active"><a href="#">Active</a></li>--}}
-{{--                        <li><a href="#">Item</a></li>--}}
-{{--                        <li class="uk-nav-header">Header</li>--}}
-{{--                        <li><a href="#">Item</a></li>--}}
-{{--                        <li><a href="#">Item</a></li>--}}
-{{--                        <li class="uk-nav-divider"></li>--}}
-{{--                        <li><a href="#">Item</a></li>--}}
-{{--                    </ul>--}}
-{{--                </div>--}}
-{{--            </li>--}}
-{{--        </ul>--}}
-{{--    </div>--}}
-{{--</nav>--}}
