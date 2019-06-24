@@ -25,3 +25,5 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/welcomepage', ['as' => 'welcomepage', 'uses' => 'WelcomePageController@showWelcomepage']);
 
 Route::get('/', ['as' => 'homepage', 'uses' => 'HomepageController@showHomepage']);
+
+Route::get('/submitPost', ['as' => 'submitPost', 'uses' => 'SubmitPostController@showSubmitPostPage']);
