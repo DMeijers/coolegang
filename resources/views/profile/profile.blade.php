@@ -30,7 +30,7 @@
                 <div class="uk-card uk-card-default uk-card-body uk-card-hover">
                     <div class="uk-card-header">
                         <h3 class="uk-card-title">Your Posts</h3>
-                        <a class="uk-card uk-text-primary" href="{{url('/submitPost')}}">Upload a Post</a>
+                        <a class="uk-card uk-text-primary" href="{{url('/showSubmitPost')}}">Upload a Post</a>
                     </div>
                     <div class="uk-card-body">
                         <p>here comes a posts</p>

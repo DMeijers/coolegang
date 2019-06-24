@@ -26,4 +26,6 @@ Route::get('/welcomepage', ['as' => 'welcomepage', 'uses' => 'WelcomePageControl
 
 Route::get('/', ['as' => 'homepage', 'uses' => 'HomepageController@showHomepage']);
 
-Route::get('/submitPost', ['as' => 'submitPost', 'uses' => 'SubmitPostController@showSubmitPostPage']);
+Route::get('/showSubmitPost', ['as' => 'showSubmitPost', 'uses' => 'SubmitPostController@showSubmitPostPage']);
+
+Route::post('/showSubmitPost', ['as' => 'submitPost', 'uses' => 'SubmitPostController@submitPost']);
