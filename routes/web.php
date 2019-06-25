@@ -18,10 +18,14 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('profile', ['as => profile', 'uses' => 'ProfileController@showProfile']);
+Route::get('profile/{id}', ['as' => 'profile', 'uses' => 'ProfileController@showProfile']);
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/welcomepage', ['as' => 'welcomepage', 'uses' => 'WelcomePageController@showWelcomepage']);
 
 Route::get('/', ['as' => 'homepage', 'uses' => 'HomepageController@showHomepage']);
+
+Route::get('/showSubmitPost', ['as' => 'showSubmitPost', 'uses' => 'SubmitPostController@showSubmitPostPage']);
+
+Route::post('/showSubmitPost', ['as' => 'submitPost', 'uses' => 'SubmitPostController@submitPost']);

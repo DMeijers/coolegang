@@ -35,7 +35,8 @@
             </ul>
         @else
             <ul class="uk-navbar-nav">
-                <li class="uk-active"><a href="{{url('/profile')}}">{{Auth::user()->name}}</a></li>
+                <li class="uk-active"><a href="{{ route('profile', ['id' => $user->id]) }}">{{$user->name}}</a></li>
+
             </ul>
         @endif
     </div>
