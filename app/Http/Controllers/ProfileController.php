@@ -4,19 +4,25 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 
 class ProfileController extends Controller
 {
-    function showProfile(Post $post, $id){
+    function showProfile(User $userprofile, Post $post, $id){
 
     	//Get the user
     	$user = Auth::user();
 
-    	$post = Post::where('id', $id)
-    	->first();
+    	$userprofile = User::find($id);
 
-        return view('profile.profile', compact('user'));
+
+
+    	//get the posts
+    	$posts = Post::where('user_id', $id)
+    	->get();
+
+        return view('profile.profile', compact('user', 'posts', 'userprofile'));
     }
 }
