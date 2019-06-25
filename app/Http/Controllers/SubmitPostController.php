@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Processors\PostProcessor;
+use App\Post;
 
 class SubmitPostController extends Controller
 {
  function showSubmitPostPage(){
- 	return view('posts.submitPosts');
+ 	$user = Auth::user();
+ 	return view('posts.submitPosts', compact('user'));
  }
  function submitPost(Request $request){
 
@@ -20,6 +22,9 @@ class SubmitPostController extends Controller
     $processor = new PostProcessor();
     $post = $processor->createPost($content, $user_id);
 
-    return view('profile.profile');
+    $user = Auth::user();
+    $id = $user->id;
+
+        return redirect()->route('profile', ['id' => $id]);
  }
 }
