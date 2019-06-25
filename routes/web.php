@@ -22,6 +22,8 @@ Route::get('profile/{id}', ['as' => 'profile', 'uses' => 'ProfileController@show
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
+Route::get('/followers', ['as' => 'followers', 'uses' => 'FollowController@showFollowers']);
+
 Route::get('/welcomepage', ['as' => 'welcomepage', 'uses' => 'WelcomePageController@showWelcomepage']);
 
 Route::get('/', ['as' => 'homepage', 'uses' => 'HomepageController@showHomepage']);

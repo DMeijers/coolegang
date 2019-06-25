@@ -12,10 +12,10 @@
                         <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: comment"></span>Chat</a></li>
                         <li class="uk-nav-divider"></li>
                         <li class="uk-nav-header">Followers</li>
-                        <li><a href="#"><span class="uk-margin-small-right" uk-icon="icon: heart"></span>Following</a>
+                        <li><a href="{{url('/followers')}}"><span class="uk-margin-small-right" uk-icon="icon: heart"></span>Following</a>
                         </li>
                         <li class="uk-nav-divider"></li>
-                        <li class="uk-active"><a href="{{url('/profile')}}">Profile</a></li>
+                        <li class="uk-active"><a href="{{url('/profile/' . Auth::user()->id)}}">Profile</a></li>
                         <li class="uk-active"><a href="{{url('/logout')}}">Logout</a></li>
                     </ul>
                 </div>
@@ -35,8 +35,7 @@
             </ul>
         @else
             <ul class="uk-navbar-nav">
-                <li class="uk-active"><a href="{{ route('profile', ['id' => $user->id]) }}">{{$user->name}}</a></li>
-
+                <li class="uk-active"><a href="{{ url('/profile/' . Auth::user()->id) }}">{{Auth::user()->name}}</a></li>
             </ul>
         @endif
     </div>
