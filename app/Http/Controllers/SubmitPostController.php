@@ -19,6 +19,7 @@ class SubmitPostController extends Controller
 
     $processor = new PostProcessor();
     $post = $processor->createPost($content, $user_id);
-    dd($post);
+
+    return view('profile.profile');
  }
 }

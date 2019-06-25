@@ -18,7 +18,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('profile', ['as => profile', 'uses' => 'ProfileController@showProfile']);
+Route::get('profile/{id}', ['as' => 'profile', 'uses' => 'ProfileController@showProfile']);
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
