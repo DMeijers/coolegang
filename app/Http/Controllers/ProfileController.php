@@ -17,12 +17,12 @@ class ProfileController extends Controller
 
     	$userprofile = User::find($id);
 
-
+    	$allUsers = User::where('id', '!=', auth()->id())->get();
 
     	//get the posts
     	$posts = Post::where('user_id', $id)
     	->get();
 
-        return view('profile.profile', compact('user', 'posts', 'userprofile'));
+        return view('profile.profile', compact('user', 'posts', 'userprofile', 'allUsers'));
     }
 }

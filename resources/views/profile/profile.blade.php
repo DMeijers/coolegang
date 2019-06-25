@@ -42,7 +42,7 @@
                                     <img class="uk-comment-avatar" src="{{asset('images/logo.png')}}" width="80" height="80" alt="">
                                 </div>
                                 <div class="uk-width-expand">
-                                    <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">Username</a></h4>
+                                    <h4 class="uk-comment-title uk-margin-remove"><a class="uk-link-reset" href="#">{{$user->name}}</a></h4>
                                     <ul class="uk-comment-meta uk-subnav uk-subnav-divider uk-margin-remove-top">
                                         <li><a href="#">{{ $post->created_at }}</a></li>
                                         <li><a href="#">Reply</a></li>
@@ -65,7 +65,11 @@
                         <h3 class="uk-card-title">Your Friends</h3>
                     </div>
                     <div class="uk-card-body">
-                        <p>Gello i am fren</p>
+                        @foreach($allUsers as $alluser)
+                        <a class="uk-margin-bottom uk-width-1-2" href="{{url('profile/' . $alluser->id)}} ">{{ $alluser->name }}</a>
+                        <br>
+                        <br>
+                        @endforeach
                     </div>
                 </div>
             </div>
